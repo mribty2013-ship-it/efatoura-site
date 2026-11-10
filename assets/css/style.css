@@ -71,7 +71,7 @@ p { margin: 0 0 1em; }
 .nav-links a { color: var(--ink); font-weight: 600; font-size: .95rem; padding: 8px 12px; border-radius: 10px; white-space: nowrap; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { background: var(--majorelle-soft); color: var(--majorelle); text-decoration: none; }
 .nav-cta { display: flex; gap: 10px; flex-shrink: 0; }
-.nav-cta .btn-outline { display: none; }
+.nav-cta .btn-outline { padding: .85em 1.1em; }
 .brand { flex-shrink: 0; }
 .menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; }
 .menu-toggle span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px auto; transition: .2s; }

@@ -7,8 +7,7 @@ $nav = @(
   @('fonctionnalites.html', 'Fonctionnalités'),
   @('cabinets.html', 'Cabinets comptables'),
   @('securite.html', 'Sécurité &amp; conformité'),
-  @('telecharger.html', 'Télécharger'),
-  @('contact.html', 'Contact')
+  @('telecharger.html', 'Télécharger')
 )
 foreach ($f in Get-ChildItem (Join-Path $PSScriptRoot 'pages') -Filter *.html) {
   $src = [IO.File]::ReadAllText($f.FullName)

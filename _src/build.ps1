@@ -1,4 +1,4 @@
-﻿# Assemble les pages internes du site : _src\pages\<page>.html (métadonnées + contenu) dans le gabarit commun.
+# Assemble les pages internes du site : _src\pages\<page>.html (métadonnées + contenu) dans le gabarit commun.
 # Usage : powershell -ExecutionPolicy Bypass -File _src\build.ps1
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot

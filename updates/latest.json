@@ -8,7 +8,7 @@
   "notes": "Archivage cloud des exercices anciens et mises à jour intégrées dans eFatoura.",
   "installer": {
     "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.3.0/eFatoura-Setup-1.3.0.exe",
-    "size": 38892594,
-    "sha256": "4aee8bdd7f593dea12a97b55d5bc19d7ce29065aa476222641c7de8d4289c4da"
+    "size": 38882329,
+    "sha256": "6552f08d2de357bf6f206cfe14f3880d2c77e744ab35804862754b4b32a57bbd"
   }
 }

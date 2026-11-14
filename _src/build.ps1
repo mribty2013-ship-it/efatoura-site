@@ -3,11 +3,12 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $layout = [IO.File]::ReadAllText((Join-Path $PSScriptRoot 'layout.html'))
+$eAcute = [char]0x00E9
 $nav = @(
-  @('fonctionnalites.html', 'Fonctionnalités'),
+  @('fonctionnalites.html', "Fonctionnalit${eAcute}s"),
   @('cabinets.html', 'Cabinets comptables'),
-  @('securite.html', 'Sécurité &amp; conformité'),
-  @('telecharger.html', 'Télécharger')
+  @('securite.html', "S${eAcute}curit${eAcute} &amp; conformit${eAcute}"),
+  @('telecharger.html', "T${eAcute}l${eAcute}charger")
 )
 foreach ($f in Get-ChildItem (Join-Path $PSScriptRoot 'pages') -Filter *.html) {
   $src = [IO.File]::ReadAllText($f.FullName)

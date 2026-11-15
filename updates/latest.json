@@ -3,12 +3,12 @@
   "channel": "stable",
   "version": "1.4.0",
   "build": 5,
-  "publishedAt": "2026-11-15T12:17:00+01:00",
+  "publishedAt": "2026-11-15T12:50:00+01:00",
   "mandatory": false,
-  "notes": "Version 1.4.0 : facturation et comptabilité 100 % marocaine, pour les entreprises et les cabinets.",
+  "notes": "Version 1.4.0 : parcours devis, commande, bon de livraison, facture et avoir.",
   "installer": {
     "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.4.0/eFatoura-Setup-1.4.0.exe",
-    "size": 17785400,
-    "sha256": "28a3d881f62f21905f8412332873ce802b68d24a8b3e3ccb9d354459ebb2fee4"
+    "size": 17788359,
+    "sha256": "f1741455523c9a8a2cc8d7b0bcad7964cd18fee76bdc1f279b5fe7a406fd0721"
   }
 }

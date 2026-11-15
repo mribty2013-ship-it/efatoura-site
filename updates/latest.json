@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.3.0",
-  "build": 4,
-  "publishedAt": "2026-11-12T18:15:00+01:00",
+  "version": "1.4.0",
+  "build": 5,
+  "publishedAt": "2026-11-15T12:17:00+01:00",
   "mandatory": false,
-  "notes": "Archivage cloud des exercices anciens et mises à jour intégrées dans eFatoura.",
+  "notes": "Version 1.4.0 : facturation et comptabilité 100 % marocaine, pour les entreprises et les cabinets.",
   "installer": {
-    "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.3.0/eFatoura-Setup-1.3.0.exe",
-    "size": 38882329,
-    "sha256": "6552f08d2de357bf6f206cfe14f3880d2c77e744ab35804862754b4b32a57bbd"
+    "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.4.0/eFatoura-Setup-1.4.0.exe",
+    "size": 17785400,
+    "sha256": "28a3d881f62f21905f8412332873ce802b68d24a8b3e3ccb9d354459ebb2fee4"
   }
 }

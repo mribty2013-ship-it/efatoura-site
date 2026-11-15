@@ -294,7 +294,7 @@ section { padding: 96px 0; }
   .qr-card { grid-template-columns: 1fr; }
   .nav-cta .btn-primary { display: none; }
   .site-header.open .nav-links .nav-demo { display: block; }
-  .site-header.open .nav-links .nav-demo a { background: var(--majorelle); color: #fff; text-align: center; margin-top: 6px; }
+  .site-header.open .nav-links .nav-demo a { display: block; background: var(--majorelle); color: #fff; text-align: center; margin-top: 6px; }
   .flow, .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-visual .phone { width: 40%; right: 0; }

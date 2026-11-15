@@ -49,13 +49,13 @@
       <label class="resa-consent"><input type="checkbox" name="consent" required> J'accepte que mes informations soient utilisées pour traiter ma réservation (loi 09‑08). Aucune donnée bancaire n'est demandée.</label>
       <p class="resa-err" id="resa-err" hidden>Merci de remplir les champs obligatoires (nom du cabinet, nom, e-mail, téléphone) et de cocher l'accord.</p>
       <p style="margin-top:18px"><button class="btn btn-saffron" type="submit">Réserver ma place, sans payer</button></p>
-      <p class="muted" style="font-size:.85rem">Aucun paiement maintenant. La réservation ne vous engage qu'après la signature de votre contrat d'abonnement.</p>
+      <p class="muted" style="font-size:.85rem">Aucun paiement maintenant. La réservation est envoyée à <a href="mailto:factures@efatoura.ma">factures@efatoura.ma</a>. Téléphone : <a href="tel:+212669797991">06 69 79 79 91</a>. Elle ne vous engage qu'après la signature de votre contrat d'abonnement.</p>
     </form>
     <div id="resa-ok" class="card resa-ok" hidden>
       <h3>Votre réservation est enregistrée</h3>
       <p>Référence : <b id="resa-ref"></b></p>
       <p>Gardez cette référence. Notre équipe vous contacte sous 48 heures ouvrées pour confirmer votre offre et préparer votre espace eFatoura. Le premier paiement n'interviendra qu'en 2027.</p>
-      <p class="muted" id="resa-mail-note" hidden>Si votre messagerie ne s'est pas ouverte, écrivez-nous à <a href="mailto:contact@efatoura.ma">contact@efatoura.ma</a> en indiquant votre référence.</p>
+      <p class="muted" id="resa-mail-note" hidden>Si votre messagerie ne s'est pas ouverte, écrivez-nous à <a href="mailto:factures@efatoura.ma">factures@efatoura.ma</a> en indiquant votre référence.</p>
     </div>
     <div class="reveal" style="display:grid;gap:18px;align-content:start">
       <div class="dark-band">
@@ -102,7 +102,7 @@
     }
     function mail() {
       var body = ['Réservation offre de lancement eFatoura', 'Référence : ' + ref, 'Offre : ' + LABEL[d.offre], 'Paiement en 2027 : ' + d.rythme, 'Cabinet : ' + d.type, 'Nom du cabinet : ' + d.company, 'ICE : ' + d.ice, 'Ville : ' + d.city, 'Responsable : ' + d.name + (d.role ? ' (' + d.role + ')' : ''), 'E-mail : ' + d.email, 'Téléphone : ' + d.phone, 'Sociétés clientes : ' + d.count, '', d.message].join('\n');
-      location.href = 'mailto:contact@efatoura.ma?subject=' + encodeURIComponent('Réservation ' + ref + ' — ' + d.company) + '&body=' + encodeURIComponent(body);
+      location.href = 'mailto:factures@efatoura.ma?subject=' + encodeURIComponent('Réservation ' + ref + ' — ' + d.company) + '&body=' + encodeURIComponent(body);
       done(true);
     }
     var url = window.EFATOURA_RESERVATION_ENDPOINT;

@@ -1,6 +1,6 @@
 {
   "web": "https://app.efatoura.ma/",
-  "notify_email": "contact@efatoura.ma",
+  "notify_email": "factures@efatoura.ma",
   "android": { "status": "soon", "url": "" },
   "ios": { "status": "soon", "url": "" },
   "macos": { "status": "soon", "url": "" },

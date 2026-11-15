@@ -182,7 +182,7 @@
         event.preventDefault();
         var email = event.currentTarget.querySelector("input").value;
         var platform = event.currentTarget.getAttribute("data-platform");
-        var to = (links && links.notify_email) || "contact@efatoura.ma";
+        var to = (links && links.notify_email) || "factures@efatoura.ma";
         location.href = "mailto:" + to + "?subject=" + encodeURIComponent("eFatoura — " + platform) +
           "&body=" + encodeURIComponent(email + "\n" + platform);
       });

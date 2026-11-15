@@ -41,7 +41,7 @@
         '',
         String(d.get('message') || ''),
       ].join('\n');
-      window.location.href = `mailto:contact@efatoura.ma?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:factures@efatoura.ma?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
 })();

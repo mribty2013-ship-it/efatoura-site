@@ -39,6 +39,9 @@
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
+<div class="promo-bar" data-offer>
+  <div class="container"><span><b>Cabinets comptables et experts : ‑50 % à vie</b>. Réservez maintenant, <b>payez en 2027</b>. Jusqu'au 31 décembre 2026.</span> <a href="reserver.html">Réserver ma place →</a></div>
+</div>
 <header class="site-header">
   <nav class="container nav" aria-label="Navigation principale">
     <a class="brand" href="./"><img src="assets/img/logo.svg" alt="" width="38" height="38"><span><b>e</b>Fatoura</span></a>
@@ -68,11 +71,9 @@
         <h1>Le logiciel de facturation et de comptabilité <em>100 % marocain</em>.</h1>
         <p class="lead">Pour toutes les entreprises, de l'auto-entrepreneur au grand groupe, et pour leurs cabinets comptables et experts-comptables. Factures conformes, factures fournisseurs reçues automatiquement, TVA, paie et comptable connecté : eFatoura applique les règles marocaines pour vous et prépare déjà la facture électronique de la DGI.</p>
         <div class="hero-actions">
-          <a class="btn btn-saffron" href="contact.html">Demander une démo gratuite
+          <a class="btn btn-saffron" href="#offre">Profiter de l'offre de lancement
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-ghost" href="telecharger.html">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 19h16"/></svg>
-            Télécharger eFatoura</a>
+          <a class="btn btn-ghost" href="contact.html">Demander une démo gratuite</a>
         </div>
         <ul class="proof">
           <li><b>+1 300</b><span>contrôles automatiques à chaque version</span></li>
@@ -83,6 +84,41 @@
       <div class="hero-visual">
         <div class="screen"><img src="assets/img/cockpit.png" alt="Tableau de bord eFatoura : encaissements, TVA, évolution sur 12 mois et recouvrement clients" width="1800" height="1500"></div>
         <div class="phone"><img src="assets/img/mobile.png" alt="eFatoura sur mobile" width="585" height="1230" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offre de lancement -->
+  <section class="offer" id="offre" data-offer>
+    <div class="container">
+      <div class="offer-head reveal">
+        <span class="badge">Offre de lancement · jusqu'au 31 décembre 2026</span>
+        <h2>Réservez maintenant, <em>payez en 2027</em>.</h2>
+        <p>Pour les cabinets comptables, fiduciaires et experts-comptables. Aucun paiement aujourd'hui : réservez votre place avant le 31 décembre 2026 et bloquez <b>à vie</b> une mensualité à ‑50 %. Le premier paiement n'intervient qu'en 2027.</p>
+        <div class="countdown" aria-live="polite"><div><b data-cd="d">--</b><span>jours</span></div><div><b data-cd="h">--</b><span>heures</span></div><div><b data-cd="m">--</b><span>minutes</span></div><div><b data-cd="s">--</b><span>secondes</span></div></div>
+      </div>
+      <div class="plans plans-2">
+        <div class="plan reveal">
+          <span class="plan-pct">‑50 %</span>
+          <h3>100 sociétés</h3>
+          <p class="plan-soc">Cabinets comptables et experts-comptables, jusqu'à 100 sociétés clientes</p>
+          <p class="plan-old">5 000 DH / mois</p>
+          <p class="plan-new"><b>2 500</b> DH HT / mois</p>
+          <ul class="plan-list"><li>100 sociétés clientes, créées par le cabinet</li><li>10 collaborateurs</li><li>Mensualité bloquée à vie</li><li>Paiement en 2027</li></ul>
+          <a class="btn btn-primary" href="reserver.html?offre=100">Réserver cette offre</a>
+        </div>
+        <div class="plan plan-best reveal">
+          <span class="plan-pct">‑50 %</span>
+          <h3>Illimité</h3>
+          <p class="plan-soc">Grands cabinets et réseaux : sociétés clientes et collaborateurs illimités</p>
+          <p class="plan-old">10 000 DH / mois</p>
+          <p class="plan-new"><b>5 000</b> DH HT / mois</p>
+          <ul class="plan-list"><li>Sociétés clientes illimitées</li><li>Collaborateurs illimités et marque blanche</li><li>Mensualité bloquée à vie</li><li>Paiement en 2027</li></ul>
+          <a class="btn btn-saffron" href="reserver.html?offre=illimite">Réserver cette offre</a>
+        </div>
+      </div>
+      <div class="offer-foot reveal">
+        <p>Prix hors taxes (TVA 20 % en sus). Offre réservée aux réservations faites au plus tard le 31 décembre 2026 à 23 h 59 (heure du Maroc). Aucun paiement à la réservation : le premier paiement intervient en 2027. Mensualité de lancement garantie à vie, en paiement mensuel comme en annuel (2 mois offerts), tant que l'abonnement reste actif sans interruption. Offre réservée aux cabinets comptables, fiduciaires et experts-comptables : le cabinet crée lui-même les comptes de ses sociétés clientes. Non cumulable avec d'autres remises.</p>
       </div>
     </div>
   </section>
@@ -437,5 +473,19 @@
   </div>
 </footer>
 <script src="assets/js/main.js" defer></script>
+<script>
+(function () {
+  var end = Date.parse('2026-12-31T23:59:59+01:00');
+  function tick() {
+    var left = end - Date.now();
+    if (left <= 0) { document.querySelectorAll('[data-offer]').forEach(function (e) { e.remove(); }); return; }
+    var d = Math.floor(left / 864e5), h = Math.floor(left / 36e5) % 24, m = Math.floor(left / 6e4) % 60, sec = Math.floor(left / 1e3) % 60;
+    var v = { d: d, h: h, m: m, s: sec };
+    document.querySelectorAll('[data-cd]').forEach(function (e) { var k = e.getAttribute('data-cd'); e.textContent = (k === 'd' ? v[k] : ('0' + v[k]).slice(-2)); });
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,115 @@
+<!-- title: Réserver l'offre de lancement — eFatoura -->
+<!-- description: Cabinets comptables, fiduciaires et experts-comptables : réservez l'offre de lancement eFatoura avant le 31 décembre 2026 : ‑50 %, aucun paiement aujourd'hui, premier paiement en 2027. -->
+<section class="page-hero">
+  <div class="container">
+    <span class="badge">Cabinets &amp; experts-comptables · jusqu'au 31 décembre 2026</span>
+    <h1>Réservez aujourd'hui, payez en 2027</h1>
+    <p>Offre réservée aux cabinets comptables, fiduciaires et experts-comptables. Réservez en deux minutes une mensualité à ‑50 % qui reste la même à vie : aucun paiement maintenant, nous activons votre espace cabinet et vous créez vous-même les comptes de vos sociétés clientes. Le premier paiement n'intervient qu'en 2027.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-grid">
+    <form id="resa-form" class="card reveal" novalidate>
+      <h3>Réservation de votre cabinet</h3>
+      <label>Choisissez votre offre</label>
+      <div class="resa-choice">
+        <label class="resa-opt"><input type="radio" name="offre" value="100" checked><span><b>100 sociétés</b><s>5 000 DH</s> <em>2 500 DH HT / mois</em></span></label>
+        <label class="resa-opt"><input type="radio" name="offre" value="illimite"><span><b>Illimité</b><s>10 000 DH</s> <em>5 000 DH HT / mois</em></span></label>
+      </div>
+      <label for="r-type">Vous êtes</label>
+      <select id="r-type" name="type" required>
+        <option>Cabinet comptable ou fiduciaire</option>
+        <option>Expert-comptable</option>
+        <option>Grand cabinet ou réseau de cabinets</option>
+      </select>
+      <label for="r-rythme">Paiement en 2027</label>
+      <select id="r-rythme" name="rythme">
+        <option>Mensuel (la mensualité reste à vie)</option>
+        <option>Annuel, 2 mois offerts (le prix reste à vie)</option>
+      </select>
+      <label for="r-company">Nom du cabinet (raison sociale)</label>
+      <input id="r-company" name="company" required autocomplete="organization">
+      <label for="r-ice">ICE du cabinet (15 chiffres, facultatif)</label>
+      <input id="r-ice" name="ice" inputmode="numeric" pattern="[0-9]{15}" maxlength="15">
+      <label for="r-city">Ville</label>
+      <input id="r-city" name="city" autocomplete="address-level2">
+      <label for="r-name">Nom et prénom du responsable</label>
+      <input id="r-name" name="name" required autocomplete="name">
+      <label for="r-role">Fonction</label>
+      <input id="r-role" name="role" autocomplete="organization-title">
+      <label for="r-email">E-mail</label>
+      <input id="r-email" name="email" type="email" required autocomplete="email">
+      <label for="r-phone">Téléphone</label>
+      <input id="r-phone" name="phone" type="tel" required autocomplete="tel">
+      <label for="r-count">Nombre de sociétés clientes suivies</label>
+      <input id="r-count" name="count" type="number" min="1" inputmode="numeric">
+      <label for="r-msg">Message (facultatif)</label>
+      <textarea id="r-msg" name="message" rows="3" placeholder="Logiciel actuel, nombre de collaborateurs, date de démarrage souhaitée…"></textarea>
+      <label class="resa-consent"><input type="checkbox" name="consent" required> J'accepte que mes informations soient utilisées pour traiter ma réservation (loi 09‑08). Aucune donnée bancaire n'est demandée.</label>
+      <p class="resa-err" id="resa-err" hidden>Merci de remplir les champs obligatoires (nom du cabinet, nom, e-mail, téléphone) et de cocher l'accord.</p>
+      <p style="margin-top:18px"><button class="btn btn-saffron" type="submit">Réserver ma place, sans payer</button></p>
+      <p class="muted" style="font-size:.85rem">Aucun paiement maintenant. La réservation ne vous engage qu'après la signature de votre contrat d'abonnement.</p>
+    </form>
+    <div id="resa-ok" class="card resa-ok" hidden>
+      <h3>Votre réservation est enregistrée</h3>
+      <p>Référence : <b id="resa-ref"></b></p>
+      <p>Gardez cette référence. Notre équipe vous contacte sous 48 heures ouvrées pour confirmer votre offre et préparer votre espace eFatoura. Le premier paiement n'interviendra qu'en 2027.</p>
+      <p class="muted" id="resa-mail-note" hidden>Si votre messagerie ne s'est pas ouverte, écrivez-nous à <a href="mailto:contact@efatoura.ma">contact@efatoura.ma</a> en indiquant votre référence.</p>
+    </div>
+    <div class="reveal" style="display:grid;gap:18px;align-content:start">
+      <div class="dark-band">
+        <h3>Comment ça marche</h3>
+        <ol class="resa-steps">
+          <li><b>Vous réservez</b> avant le 31 décembre 2026, sans carte bancaire.</li>
+          <li><b>Nous vous appelons</b> pour confirmer votre offre et vos besoins.</li>
+          <li><b>Vous démarrez</b> : espace cabinet activé, vous créez les comptes de vos sociétés clientes, données reprises, équipe formée.</li>
+          <li><b>Vous payez en 2027</b>, et votre mensualité reste la même à vie.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Inclus dans les deux offres</h3>
+        <ul class="checklist">
+          <li>Facturation, achats, factures reçues et comptabilité CGNC</li>
+          <li>Espace cabinet multi-sociétés : vous créez et gérez les comptes de vos clients</li>
+          <li>Reprise de vos données depuis Sage</li>
+          <li>Windows, navigateur, Android et iPhone</li>
+          <li>Hébergement et support au Maroc</li>
+          <li>La mensualité de lancement reste à vie, tant que l'abonnement reste actif</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var f = document.getElementById('resa-form'); if (!f) return;
+  var q = new URLSearchParams(location.search).get('offre');
+  if (q === 'illimite' || q === '100') { var r = f.querySelector('input[name="offre"][value="' + q + '"]'); if (r) r.checked = true; }
+  var LABEL = { '100': '100 sociétés — 2 500 DH HT / mois (au lieu de 5 000)', 'illimite': 'Illimité — 5 000 DH HT / mois (au lieu de 10 000)' };
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var err = document.getElementById('resa-err');
+    var ice = f.ice.value.trim();
+    if (!f.company.value.trim() || !f.name.value.trim() || !f.email.checkValidity() || !f.email.value || !f.phone.value.trim() || !f.consent.checked || (ice && !/^[0-9]{15}$/.test(ice))) { err.hidden = false; return; }
+    err.hidden = true;
+    var ref = 'RES-2026-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+    var d = { reference: ref, offre: f.offre.value, type: f.type.value, rythme: f.rythme.value, company: f.company.value.trim(), ice: ice, city: f.city.value.trim(), name: f.name.value.trim(), role: f.role.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(), count: f.count.value, message: f.message.value.trim() };
+    function done(viaMail) {
+      document.getElementById('resa-ref').textContent = ref;
+      document.getElementById('resa-mail-note').hidden = !viaMail;
+      f.hidden = true; var ok = document.getElementById('resa-ok'); ok.hidden = false; ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function mail() {
+      var body = ['Réservation offre de lancement eFatoura', 'Référence : ' + ref, 'Offre : ' + LABEL[d.offre], 'Paiement en 2027 : ' + d.rythme, 'Cabinet : ' + d.type, 'Nom du cabinet : ' + d.company, 'ICE : ' + d.ice, 'Ville : ' + d.city, 'Responsable : ' + d.name + (d.role ? ' (' + d.role + ')' : ''), 'E-mail : ' + d.email, 'Téléphone : ' + d.phone, 'Sociétés clientes : ' + d.count, '', d.message].join('\n');
+      location.href = 'mailto:contact@efatoura.ma?subject=' + encodeURIComponent('Réservation ' + ref + ' — ' + d.company) + '&body=' + encodeURIComponent(body);
+      done(true);
+    }
+    var url = window.EFATOURA_RESERVATION_ENDPOINT;
+    if (!url) { mail(); return; }
+    fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) })
+      .then(function (r) { if (!r.ok) throw 0; done(false); })
+      .catch(mail);
+  });
+})();
+</script>

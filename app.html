@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Installer eFatoura</title>
+  <meta name="description" content="Téléchargez eFatoura pour Windows, Mac, Android ou iPhone. Un seul lien, la bonne boutique selon l'appareil.">
+  <link rel="canonical" href="https://efatoura.ma/app">
+  <meta name="theme-color" content="#0F0D2E">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: #0f172a; background: #fff;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+      line-height: 1.5;
+    }
+    header, main, footer { width: min(560px, calc(100% - 32px)); margin: 0 auto; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 8px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: #0f0d2e; font-weight: 800; font-size: 1.35rem; text-decoration: none; }
+    .brand img { width: 42px; height: 42px; }
+    .langs { display: flex; gap: 6px; }
+    .langs button {
+      border: 1px solid #e6e8f2; background: #fff; border-radius: 999px;
+      padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer;
+    }
+    .langs button[aria-pressed="true"] { background: #0f0d2e; color: #fff; border-color: #0f0d2e; }
+    h1 { font-size: clamp(1.7rem, 5vw, 2.15rem); letter-spacing: -.03em; margin: 18px 0 8px; }
+    .lead { color: #5b6478; margin: 0 0 22px; }
+    .card {
+      border: 1px solid #e6e8f2; border-radius: 18px; padding: 18px;
+      display: grid; gap: 12px; margin-bottom: 14px;
+    }
+    .btn, button.btn {
+      display: inline-flex; justify-content: center; align-items: center;
+      min-height: 48px; padding: 12px 16px; border-radius: 12px;
+      background: #4f46e5; color: #fff; font-weight: 750; text-decoration: none;
+      border: 0; font: inherit; font-weight: 800; cursor: pointer;
+    }
+    .btn.secondary { background: #fff; color: #0f0d2e; border: 1px solid #e6e8f2; }
+    form { display: grid; gap: 8px; }
+    input[type="email"] {
+      width: 100%; min-height: 48px; padding: 12px 14px; border-radius: 12px;
+      border: 1px solid #e6e8f2; font: inherit;
+    }
+    .muted { color: #5b6478; font-size: .92rem; margin: 0; }
+    .soon { font-weight: 800; color: #b45309; }
+    footer { padding: 8px 0 32px; }
+    .all { display: grid; gap: 10px; }
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="https://efatoura.ma/"><img src="assets/img/logo.svg" alt="" width="42" height="42"><span>eFatoura</span></a>
+  <div class="langs" role="group" aria-label="Langue">
+    <button type="button" id="lang-fr" aria-pressed="true">FR</button>
+    <button type="button" id="lang-en" aria-pressed="false">EN</button>
+  </div>
+</header>
+<main>
+  <h1 id="title">Installer eFatoura</h1>
+  <p class="lead" id="lead">Selon votre appareil, le bon lien s'affiche.</p>
+  <div id="panel"></div>
+</main>
+<footer>
+  <p class="muted" id="privacy">Aucun cookie publicitaire. L'adresse e-mail ne part que si vous ouvrez votre messagerie.</p>
+</footer>
+<script>
+(function () {
+  var copy = {
+    fr: {
+      title: "Installer eFatoura",
+      lead: "Selon votre appareil, le bon lien s'affiche.",
+      privacy: "Aucun cookie publicitaire. L'adresse e-mail ne part que si vous ouvrez votre messagerie.",
+      open: "Télécharger",
+      web: "Ouvrir la version web",
+      soon: "Bientôt disponible",
+      soonLead: "Laissez votre e-mail : nous vous prévenons dès que c'est prêt.",
+      email: "Adresse e-mail",
+      notify: "Me prévenir",
+      betaAndroid: "Rejoindre le test fermé Google Play",
+      betaIos: "Ouvrir TestFlight",
+      beta: "Télécharger la version bêta",
+      others: "Autres appareils",
+      windows: "Windows",
+      mac: "Mac",
+      android: "Android",
+      ios: "iPhone et iPad"
+    },
+    en: {
+      title: "Install eFatoura",
+      lead: "The right link is shown for this device.",
+      privacy: "No advertising cookies. Your email is sent only if you open your mail app.",
+      open: "Download",
+      web: "Open the web version",
+      soon: "Coming soon",
+      soonLead: "Leave your email and we will tell you when it is ready.",
+      email: "Email address",
+      notify: "Notify me",
+      betaAndroid: "Join the Google Play closed test",
+      betaIos: "Open TestFlight",
+      beta: "Download the beta",
+      others: "Other devices",
+      windows: "Windows",
+      mac: "Mac",
+      android: "Android",
+      ios: "iPhone and iPad"
+    }
+  };
+  var lang = (navigator.language || "fr").toLowerCase().indexOf("en") === 0 ? "en" : "fr";
+  var links = null;
+
+  function device() {
+    var ua = navigator.userAgent || "";
+    var touchMac = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+    if (/Android/i.test(ua)) return "android";
+    if (/iPhone|iPad|iPod/i.test(ua) || touchMac) return "ios";
+    if (/Macintosh|Mac OS X/i.test(ua)) return "macos";
+    if (/Windows/i.test(ua)) return "windows";
+    return "other";
+  }
+
+  function text(id, value) { document.getElementById(id).textContent = value; }
+
+  function button(href, label, secondary) {
+    return '<a class="btn' + (secondary ? " secondary" : "") + '" href="' + href + '">' + label + "</a>";
+  }
+
+  function notifyForm(platform) {
+    var t = copy[lang];
+    return '<p class="soon">' + t.soon + "</p><p class=\"muted\">" + t.soonLead + "</p>" +
+      '<form data-platform="' + platform + '"><label class="muted">' + t.email + "</label>" +
+      '<input type="email" required autocomplete="email">' +
+      '<button class="btn" type="submit">' + t.notify + "</button></form>";
+  }
+
+  function card(platform, entry) {
+    var t = copy[lang];
+    var status = (entry && entry.status) || "soon";
+    var url = (entry && entry.url) || "";
+    if (status === "public" && url) return button(url, t.open);
+    if (status === "beta" && url) {
+      var label = platform === "android" ? t.betaAndroid : platform === "ios" ? t.betaIos : t.beta;
+      return '<p class="muted">' + label + "</p>" + button(url, label);
+    }
+    return notifyForm(platform);
+  }
+
+  function render() {
+    var t = copy[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    text("title", t.title);
+    text("lead", t.lead);
+    text("privacy", t.privacy);
+    document.getElementById("lang-fr").setAttribute("aria-pressed", lang === "fr" ? "true" : "false");
+    document.getElementById("lang-en").setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+    var which = device();
+    var names = { windows: t.windows, macos: t.mac, android: t.android, ios: t.ios };
+    function block(platform) {
+      var entry = links ? links[platform] : null;
+      return '<div class="card"><strong>' + names[platform] + "</strong>" + card(platform, entry) + "</div>";
+    }
+    var html = "";
+    if (which === "other" || !links) {
+      html = '<div class="all">' + block("windows") + block("macos") + block("android") + block("ios") +
+        button((links && links.web) || "https://app.efatoura.ma/", t.web, true) + "</div>";
+    } else {
+      html = '<div class="card">' + card(which, links[which]) +
+        button(links.web || "https://app.efatoura.ma/", t.web, true) + "</div>" +
+        '<p class="muted">' + t.others + "</p><div class=\"all\">" +
+        (which !== "windows" ? block("windows") : "") +
+        (which !== "macos" ? block("macos") : "") +
+        (which !== "android" ? block("android") : "") +
+        (which !== "ios" ? block("ios") : "") + "</div>";
+    }
+    document.getElementById("panel").innerHTML = html;
+    var forms = document.querySelectorAll("form");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", function (event) {
+        event.preventDefault();
+        var email = event.currentTarget.querySelector("input").value;
+        var platform = event.currentTarget.getAttribute("data-platform");
+        var to = (links && links.notify_email) || "contact@efatoura.ma";
+        location.href = "mailto:" + to + "?subject=" + encodeURIComponent("eFatoura — " + platform) +
+          "&body=" + encodeURIComponent(email + "\n" + platform);
+      });
+    }
+  }
+
+  document.getElementById("lang-fr").onclick = function () { lang = "fr"; render(); };
+  document.getElementById("lang-en").onclick = function () { lang = "en"; render(); };
+  fetch("updates/download-links.json", { cache: "no-store" })
+    .then(function (response) { return response.json(); })
+    .then(function (data) { links = data; render(); })
+    .catch(function () { render(); });
+})();
+</script>
+</body>
+</html>

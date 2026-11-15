@@ -1,0 +1,11 @@
+{
+  "web": "https://app.efatoura.ma/",
+  "notify_email": "contact@efatoura.ma",
+  "android": { "status": "soon", "url": "" },
+  "ios": { "status": "soon", "url": "" },
+  "macos": { "status": "soon", "url": "" },
+  "windows": {
+    "status": "public",
+    "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.3.0/eFatoura-Setup-1.3.0.exe"
+  }
+}

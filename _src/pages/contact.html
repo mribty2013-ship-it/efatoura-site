@@ -23,6 +23,7 @@
       <label for="subject">Objet</label>
       <select id="subject" name="subject">
         <option>Demande de démonstration</option>
+        <option>Cabinet ou expert-comptable : réserver l'offre de lancement 2026</option>
         <option>Entreprise : équiper ma société ou mon groupe</option>
         <option>Cabinet comptable ou fiduciaire : équiper mes clients</option>
         <option>Expert-comptable ou auditeur : accès de révision</option>
@@ -52,3 +53,4 @@
     </div>
   </div>
 </section>
+<script>if (/offre=lancement/.test(location.search)) { var sel = document.getElementById('subject'); if (sel) sel.value = "Cabinet ou expert-comptable : réserver l'offre de lancement 2026"; }</script>

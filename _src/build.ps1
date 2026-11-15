@@ -6,7 +6,8 @@ $layout = [IO.File]::ReadAllText((Join-Path $PSScriptRoot 'layout.html'))
 $eAcute = [char]0x00E9
 $nav = @(
   @('fonctionnalites.html', "Fonctionnalit${eAcute}s"),
-  @('cabinets.html', 'Cabinets comptables'),
+  @('nouveautes.html', "Nouveaut${eAcute}s"),
+  @('cabinets.html', 'Cabinets &amp; experts'),
   @('securite.html', "S${eAcute}curit${eAcute} &amp; conformit${eAcute}"),
   @('telecharger.html', "T${eAcute}l${eAcute}charger")
 )

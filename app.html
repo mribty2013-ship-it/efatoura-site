@@ -75,6 +75,7 @@
       privacy: "Aucun cookie publicitaire. L'adresse e-mail ne part que si vous ouvrez votre messagerie.",
       open: "Télécharger",
       web: "Ouvrir la version web",
+      webSoon: "Version web : bientôt disponible",
       soon: "Bientôt disponible",
       soonLead: "Laissez votre e-mail : nous vous prévenons dès que c'est prêt.",
       email: "Adresse e-mail",
@@ -94,6 +95,7 @@
       privacy: "No advertising cookies. Your email is sent only if you open your mail app.",
       open: "Download",
       web: "Open the web version",
+      webSoon: "Web version: coming soon",
       soon: "Coming soon",
       soonLead: "Leave your email and we will tell you when it is ready.",
       email: "Email address",
@@ -163,12 +165,13 @@
       return '<div class="card"><strong>' + names[platform] + "</strong>" + card(platform, entry) + "</div>";
     }
     var html = "";
+    var webNote = (links && links.web) ? button(links.web, t.web, true) : '<p class="muted">' + t.webSoon + "</p>";
     if (which === "other" || !links) {
       html = '<div class="all">' + block("windows") + block("macos") + block("android") + block("ios") +
-        button((links && links.web) || "https://app.efatoura.ma/", t.web, true) + "</div>";
+        webNote + "</div>";
     } else {
       html = '<div class="card">' + card(which, links[which]) +
-        button(links.web || "https://app.efatoura.ma/", t.web, true) + "</div>" +
+        webNote + "</div>" +
         '<p class="muted">' + t.others + "</p><div class=\"all\">" +
         (which !== "windows" ? block("windows") : "") +
         (which !== "macos" ? block("macos") : "") +

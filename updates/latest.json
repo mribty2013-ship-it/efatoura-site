@@ -1,14 +1,1 @@
-{
-  "schema": 1,
-  "channel": "stable",
-  "version": "1.4.0",
-  "build": 5,
-  "publishedAt": "2026-11-15T13:28:00+01:00",
-  "mandatory": false,
-  "notes": "Version 1.4.0 : parcours devis, commande, bon de livraison, facture et avoir. TVA à l'import déduite à la date de quittance.",
-  "installer": {
-    "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.4.0/eFatoura-Setup-1.4.0.exe",
-    "size": 17791847,
-    "sha256": "8b18c0323743fc8a34b42e261facdd34057bf21c327361598e534c8b20f3fbd8"
-  }
-}
+{"channel":"stable","installer":{"sha256":"eb2ad882509cb4130c64273eb0cd83a77feca80c4f6b49e8c925fca350a1455d","size":19217221,"url":"https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.5.0/eFatoura-Setup-1.5.0.exe"},"mandatory":false,"minimum_version":"1.4.0","notes":"Version 1.5.0. L'espace de mise à jour de l'application télécharge cette version.","notes_url":"https://efatoura.ma/nouveautes.html","require_authenticode":false,"version":"1.5.0","signature":"Ou36J4smkm9nsLQR7Yk77ZfJggXnFVmIHhTE1m1oxMBu5XsDkPyeTJJvWDUMLMRVo3pYWHRqOA9CH8qU9a9zCg=="}

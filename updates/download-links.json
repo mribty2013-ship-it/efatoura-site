@@ -1,11 +1,20 @@
 {
   "web": "https://efatoura.ma/app/",
   "notify_email": "factures@efatoura.ma",
-  "android": { "status": "soon", "url": "" },
-  "ios": { "status": "soon", "url": "" },
-  "macos": { "status": "soon", "url": "" },
+  "android": {
+    "status": "soon",
+    "url": ""
+  },
+  "ios": {
+    "status": "soon",
+    "url": ""
+  },
+  "macos": {
+    "status": "soon",
+    "url": ""
+  },
   "windows": {
     "status": "public",
-    "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.4.0/eFatoura-Setup-1.4.0.exe"
+    "url": "https://github.com/mribty2013-ship-it/efatoura-site/releases/download/v1.5.0/eFatoura-Setup-1.5.0.exe"
   }
 }
